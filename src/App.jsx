@@ -334,10 +334,10 @@ function Topbar({ solid = false }) {
         <Link to="/" className="topbar-back">← Back to Home</Link>
       ) : (
         <nav className="topbar-nav">
-          <Link to="/#about"    className="topbar-link">About</Link>
-          <Link to="/#programs" className="topbar-link">Programs</Link>
-          <Link to="/#products" className="topbar-link">Products</Link>
-          <Link to="/#contact"  className="topbar-link">Contact</Link>
+          <a href="#about"    className="topbar-link" onClick={e=>{e.preventDefault();document.getElementById('about')?.scrollIntoView({behavior:'smooth'})}}>About</a>
+          <a href="#programs" className="topbar-link" onClick={e=>{e.preventDefault();document.getElementById('programs')?.scrollIntoView({behavior:'smooth'})}}>Programs</a>
+          <a href="#products" className="topbar-link" onClick={e=>{e.preventDefault();document.getElementById('products')?.scrollIntoView({behavior:'smooth'})}}>Products</a>
+          <a href="#contact"  className="topbar-link" onClick={e=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}}>Contact</a>
           <a href="https://core-blueprint.laddacademy.com" className="topbar-cta" target="_blank" rel="noreferrer">
             Take the Assessment
           </a>
@@ -365,26 +365,26 @@ function Footer() {
             <div className="footer-links">
               <a href="https://core-blueprint.laddacademy.com" className="footer-link">Take Free Assessment</a>
               <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint — $24</a>
-              <a href="/#contact" className="footer-link">CORE Blueprint™ 360</a>
-              <a href="/#contact" className="footer-link">Team Assessment</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">CORE Blueprint™ 360</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Team Assessment</a>
             </div>
           </div>
           <div>
             <div className="footer-col-title">Programs</div>
             <div className="footer-links">
-              <a href="/#contact" className="footer-link">Executive Coaching</a>
-              <a href="/#contact" className="footer-link">Facilitator Certification</a>
-              <a href="/#contact" className="footer-link">Organizational Work</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Executive Coaching</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Facilitator Certification</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Organizational Work</a>
               <a href="https://crucible-laddacademy.lovable.app" className="footer-link" target="_blank" rel="noreferrer">Crucible</a>
             </div>
           </div>
           <div>
             <div className="footer-col-title">Resources</div>
             <div className="footer-links">
-              <a href="/#contact" className="footer-link">The Coaching Guide</a>
-              <a href="/#contact" className="footer-link">Books & Publications</a>
-              <a href="/#contact" className="footer-link">Speaking</a>
-              <a href="/#contact" className="footer-link">Contact</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">The Coaching Guide</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Books & Publications</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Speaking</a>
+              <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Contact</a>
             </div>
           </div>
         </div>
@@ -437,7 +437,7 @@ function HomePage() {
           <a href="https://core-blueprint.laddacademy.com" className="btn-primary" target="_blank" rel="noreferrer">
             Take the Free Assessment →
           </a>
-          <a href="#about" className="btn-outline-light">Meet the Founder</a>
+          <a href="#about" className="btn-outline-light" onClick={e=>{e.preventDefault();document.getElementById('about')?.scrollIntoView({behavior:'smooth'})}}>Meet the Founder</a>
         </div>
         <div className="hero-scroll">
           <span className="hero-scroll-text">Discover More</span>
