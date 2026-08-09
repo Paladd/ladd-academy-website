@@ -577,7 +577,28 @@ function HomePage() {
                 That is where LADD Academy began. The belief that people are capable of more. That leadership is deeply human. That lasting change begins with understanding the person looking back at you in the mirror.
               </p>
               <span className="about-quote-attr">Paul Ladd · Founder</span>
-              <div style={{ marginTop:32, padding:"24px 28px", background:CREAM, borderRadius:14, border:"1px solid #EEF2F7" }}>
+            </div>
+          </Reveal>
+          {/* RIGHT — credential cards + LADD Academy Serves */}
+          <Reveal delay={0.15}>
+            <div>
+              <div className="about-credentials">
+                {[
+                  { icon:"🎖", title:"Military Veteran", text:"Three decades of service informing a deep understanding of leadership under pressure" },
+                  { icon:"🏛", title:"Executive Coach", text:"One-on-one coaching for leaders across government, military, and private sector" },
+                  { icon:"📖", title:"Author", text:"Multiple books on leadership, values, and human development" },
+                  { icon:"🎓", title:"Coach Educator", text:"Founder of LADD Academy's coach training programs, anchored to ICF Core Competencies" },
+                ].map((c, i) => (
+                  <div className="about-cred" key={i}>
+                    <span className="about-cred-icon">{c.icon}</span>
+                    <div className="about-cred-text">
+                      <strong>{c.title}</strong>
+                      {c.text}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop:24, padding:"24px 28px", background:CREAM, borderRadius:14, border:"1px solid #EEF2F7" }}>
                 <div style={{ fontSize:11, fontWeight:700, letterSpacing:"2px", textTransform:"uppercase", color:SLATE, marginBottom:14 }}>LADD Academy Serves</div>
                 <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
                   {["Individuals","Executive Leaders","Coaches & Therapists","HR & L&D Professionals","Organizations","Faith Communities","Veterans"].map(t => (
@@ -585,25 +606,6 @@ function HomePage() {
                   ))}
                 </div>
               </div>
-            </div>
-          </Reveal>
-          {/* RIGHT — credential cards only */}
-          <Reveal delay={0.15}>
-            <div className="about-credentials">
-              {[
-                { icon:"🎖", title:"Military Veteran", text:"Three decades of service informing a deep understanding of leadership under pressure" },
-                { icon:"🏛", title:"Executive Coach", text:"One-on-one coaching for leaders across government, military, and private sector" },
-                { icon:"📖", title:"Author", text:"Multiple books on leadership, values, and human development" },
-                { icon:"🎓", title:"Coach Educator", text:"Founder of LADD Academy's coach training programs, anchored to ICF Core Competencies" },
-              ].map((c, i) => (
-                <div className="about-cred" key={i}>
-                  <span className="about-cred-icon">{c.icon}</span>
-                  <div className="about-cred-text">
-                    <strong>{c.title}</strong>
-                    {c.text}
-                  </div>
-                </div>
-              ))}
             </div>
           </Reveal>
         </div>
