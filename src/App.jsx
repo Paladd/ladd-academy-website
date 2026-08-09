@@ -143,7 +143,7 @@ const sharedCSS = `
   .featured-price-note { font-size: 13px; color: rgba(255,255,255,0.4); }
 
   /* ── About ── */
-  .about-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+  .about-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: start; }
   .about-credentials { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
   .about-cred { display: flex; align-items: flex-start; gap: 14px; padding: 16px 20px; background: ${CREAM}; border-radius: 10px; border-left: 3px solid ${GOLD}; }
   .about-cred-icon { font-size: 20px; flex-shrink: 0; }
@@ -252,7 +252,7 @@ const sharedCSS = `
     .topbar { padding: 16px 24px; }
     .topbar-nav { display: none; }
     .featured-inner { grid-template-columns: 1fr; gap: 48px; }
-    .about-inner { grid-template-columns: 1fr; gap: 48px; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
     .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
   }
   @media (max-width: 600px) {
@@ -562,33 +562,14 @@ function HomePage() {
       {/* About */}
       <section className="section" id="about" style={{ background: WHITE }}>
         <div className="about-inner">
+          {/* LEFT — all text content */}
           <Reveal>
             <div>
               <span className="section-eyebrow">About the Founder</span>
               <h2 className="section-title">Paul Ladd</h2>
-              <p className="section-body">
+              <p className="section-body" style={{ marginBottom: 24 }}>
                 Over thirty years of working with people, I've seen what happens when the human side of leadership gets lost. I've watched the pain in someone's eyes when they stop believing their work matters. I've watched good people become smaller versions of themselves under leaders who never understood how their own needs, values, and behaviors affected the people around them.
               </p>
-              <div className="about-credentials">
-                {[
-                  { icon:"🎖", title:"Military Veteran", text:"Three decades of service informing a deep understanding of leadership under pressure" },
-                  { icon:"🏛", title:"Executive Coach", text:"One-on-one coaching for leaders across government, military, and private sector" },
-                  { icon:"📖", title:"Author", text:"Multiple books on leadership, values, and human development" },
-                  { icon:"🎓", title:"Coach Educator", text:"Founder of LADD Academy's coach training programs, anchored to ICF Core Competencies" },
-                ].map((c, i) => (
-                  <div className="about-cred" key={i}>
-                    <span className="about-cred-icon">{c.icon}</span>
-                    <div className="about-cred-text">
-                      <strong>{c.title}</strong>
-                      {c.text}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <div>
               <p className="about-quote">
                 "I've also seen something else. I've seen what happens when people understand themselves, find their voice, reconnect with what matters to them, and begin leading from a place of authenticity. The difference can be extraordinary."
               </p>
@@ -596,14 +577,33 @@ function HomePage() {
                 That is where LADD Academy began. The belief that people are capable of more. That leadership is deeply human. That lasting change begins with understanding the person looking back at you in the mirror.
               </p>
               <span className="about-quote-attr">Paul Ladd · Founder</span>
-              <div style={{ marginTop:48, padding:"32px", background:CREAM, borderRadius:16, border:"1px solid #EEF2F7" }}>
-                <div style={{ fontSize:12, fontWeight:700, letterSpacing:"2px", textTransform:"uppercase", color:SLATE, marginBottom:16 }}>LADD Academy Serves</div>
-                <div style={{ display:"flex", flexWrap:"wrap", gap:10 }}>
+              <div style={{ marginTop:32, padding:"24px 28px", background:CREAM, borderRadius:14, border:"1px solid #EEF2F7" }}>
+                <div style={{ fontSize:11, fontWeight:700, letterSpacing:"2px", textTransform:"uppercase", color:SLATE, marginBottom:14 }}>LADD Academy Serves</div>
+                <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
                   {["Individuals","Executive Leaders","Coaches & Therapists","HR & L&D Professionals","Organizations","Faith Communities","Veterans"].map(t => (
-                    <span key={t} style={{ background:LTBLUE, color:NAVY, borderRadius:20, padding:"6px 14px", fontSize:13, fontWeight:600 }}>{t}</span>
+                    <span key={t} style={{ background:LTBLUE, color:NAVY, borderRadius:20, padding:"5px 13px", fontSize:13, fontWeight:600 }}>{t}</span>
                   ))}
                 </div>
               </div>
+            </div>
+          </Reveal>
+          {/* RIGHT — credential cards only */}
+          <Reveal delay={0.15}>
+            <div className="about-credentials">
+              {[
+                { icon:"🎖", title:"Military Veteran", text:"Three decades of service informing a deep understanding of leadership under pressure" },
+                { icon:"🏛", title:"Executive Coach", text:"One-on-one coaching for leaders across government, military, and private sector" },
+                { icon:"📖", title:"Author", text:"Multiple books on leadership, values, and human development" },
+                { icon:"🎓", title:"Coach Educator", text:"Founder of LADD Academy's coach training programs, anchored to ICF Core Competencies" },
+              ].map((c, i) => (
+                <div className="about-cred" key={i}>
+                  <span className="about-cred-icon">{c.icon}</span>
+                  <div className="about-cred-text">
+                    <strong>{c.title}</strong>
+                    {c.text}
+                  </div>
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
