@@ -364,7 +364,7 @@ function Footer() {
             <div className="footer-col-title">Assessment</div>
             <div className="footer-links">
               <a href="https://core-blueprint.laddacademy.com" className="footer-link">Take Free Assessment</a>
-              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint — $24</a>
+              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">CORE Blueprint™ 360</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Team Assessment</a>
             </div>
