@@ -110,14 +110,14 @@ const sharedCSS = `
   .section-body { font-size: 18px; line-height: 1.8; color: #555; max-width: 620px; }
 
   /* ── What We Do cards ── */
-  .what-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 64px; }
-  .what-card { background: ${WHITE}; border-radius: 16px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(27,58,92,0.06); border: 1px solid #EEF2F7; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
+  .what-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 64px; align-items: stretch; }
+  .what-card { background: ${WHITE}; border-radius: 16px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(27,58,92,0.06); border: 1px solid #EEF2F7; transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
   .what-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${GOLD}; transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
   .what-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(27,58,92,0.12); }
   .what-card:hover::before { transform: scaleX(1); }
   .what-icon { font-size: 32px; margin-bottom: 20px; display: block; }
   .what-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: ${NAVY}; margin-bottom: 12px; }
-  .what-text { font-size: 15px; line-height: 1.7; color: #666; margin-bottom: 20px; }
+  .what-text { font-size: 15px; line-height: 1.7; color: #666; margin-bottom: 20px; flex: 1; }
   .what-link { font-size: 13px; font-weight: 600; color: ${GOLD}; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap 0.2s; }
   .what-link:hover { gap: 10px; }
 
@@ -154,8 +154,8 @@ const sharedCSS = `
   .about-quote-attr::before { content: ''; display: block; width: 32px; height: 2px; background: ${GOLD}; }
 
   /* ── Products ── */
-  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 56px; }
-  .product-card { background: ${WHITE}; border-radius: 14px; padding: 28px; box-shadow: 0 1px 12px rgba(27,58,92,0.06); display: flex; flex-direction: column; border: 1px solid #EEF2F7; transition: transform 0.2s, box-shadow 0.2s; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 56px; align-items: stretch; }
+  .product-card { background: ${WHITE}; border-radius: 14px; padding: 28px; box-shadow: 0 1px 12px rgba(27,58,92,0.06); display: flex; flex-direction: column; border: 1px solid #EEF2F7; transition: transform 0.2s, box-shadow 0.2s; height: 100%; }
   .product-card:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(27,58,92,0.1); }
   .product-status { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 20px; padding: 3px 10px; margin-bottom: 16px; align-self: flex-start; }
   .status-live  { background: #E8F5E9; color: #2E7D32; }
@@ -245,7 +245,7 @@ const sharedCSS = `
   .footer-mini-link:hover { color: rgba(255,255,255,0.7); }
 
   /* ── Reveal animation ── */
-  .reveal { transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal { transition: opacity 0.7s ease, transform 0.7s ease; height: 100%; }
 
   /* ── Responsive ── */
   @media (max-width: 900px) {
@@ -567,7 +567,7 @@ function HomePage() {
               <span className="section-eyebrow">About the Founder</span>
               <h2 className="section-title">Paul Ladd</h2>
               <p className="section-body">
-                Paul Ladd is an executive coach, leadership development professional, and author with over three decades of experience across government, military, and private sector environments. He founded LADD Academy on the conviction that lasting transformation begins from the inside out.
+                Over thirty years of working with people, I've seen what happens when the human side of leadership gets lost. I've watched the pain in someone's eyes when they stop believing their work matters. I've watched good people become smaller versions of themselves under leaders who never understood how their own needs, values, and behaviors affected the people around them.
               </p>
               <div className="about-credentials">
                 {[
@@ -590,7 +590,10 @@ function HomePage() {
           <Reveal delay={0.15}>
             <div>
               <p className="about-quote">
-                "I didn't build LADD Academy to sell an assessment. I built it because I spent thirty years watching capable people live below their own potential — not because they lacked skill, but because they lacked self-knowledge. That changes when you understand who you are from the inside out."
+                "I've also seen something else. I've seen what happens when people understand themselves, find their voice, reconnect with what matters to them, and begin leading from a place of authenticity. The difference can be extraordinary."
+              </p>
+              <p className="section-body" style={{ marginTop: 20, marginBottom: 24 }}>
+                That is where LADD Academy began. The belief that people are capable of more. That leadership is deeply human. That lasting change begins with understanding the person looking back at you in the mirror.
               </p>
               <span className="about-quote-attr">Paul Ladd · Founder</span>
               <div style={{ marginTop:48, padding:"32px", background:CREAM, borderRadius:16, border:"1px solid #EEF2F7" }}>
