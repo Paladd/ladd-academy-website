@@ -660,16 +660,128 @@ const css = `
   .practice-signal-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #2E7D6E; margin-bottom: 6px; font-style: normal; display: block; }
 
   @media print {
+    /* Hide all interactive elements */
     .topbar, .progress-header, .report-actions,
     .upgrade-card, .drift-tease-card,
-    .sidebar-nav, .btn, .btn-print, .btn-print-gold { display: none !important; }
-    .report-layout { display: block !important; }
-    .report-sidebar { position: static !important; }
+    .sidebar-nav, .btn, .btn-print, .btn-print-gold,
+    .btn-print-gold, .free-summary-card .values-chips { display: none !important; }
+
+    /* Force background colors to print */
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+
+    /* Page setup */
+    @page { margin: 0.6in; size: letter; }
+    body { background: white !important; font-size: 11pt; }
     .page { padding: 0 !important; }
-    body { background: white !important; }
-    .report-hero { border-radius: 0 !important; }
-    .report-section { box-shadow: none !important; border: 1px solid #E8EDF2 !important; }
-    .ftyky-card { break-before: page; }
+
+    /* Convert two-column to single column for print */
+    .report-layout { display: block !important; }
+    .report-sidebar { display: none !important; }
+    .report-main { width: 100% !important; }
+
+    /* Hero — keep navy background */
+    .report-hero {
+      border-radius: 4px !important;
+      margin-bottom: 20px !important;
+      padding: 28px 32px !important;
+      background: #1B3A5C !important;
+      page-break-after: avoid;
+    }
+    .report-type-name { color: white !important; font-size: 28pt !important; }
+    .report-tagline { color: #C8962E !important; }
+    .report-greeting { color: rgba(255,255,255,0.6) !important; }
+    .report-family-badge { color: rgba(255,255,255,0.6) !important; }
+    .report-type-emoji { font-size: 36pt !important; }
+
+    /* Print a simplified dimension score block instead of sidebar */
+    .report-hero::after {
+      content: '';
+      display: block;
+    }
+
+    /* Sections */
+    .report-section {
+      box-shadow: none !important;
+      border: 1px solid #E8EDF2 !important;
+      border-radius: 4px !important;
+      margin-bottom: 14px !important;
+      padding: 18px 20px !important;
+      page-break-inside: avoid;
+    }
+
+    /* Section text colors */
+    .section-eyebrow { color: #C8962E !important; font-size: 8pt !important; }
+    .section-title { font-size: 16pt !important; color: #1B3A5C !important; }
+    .section-body { font-size: 10pt !important; line-height: 1.6 !important; }
+
+    /* Impact cards */
+    .impact-card {
+      border: 1px solid #E8EDF2 !important;
+      box-shadow: none !important;
+      page-break-inside: avoid;
+      margin-bottom: 12px !important;
+    }
+    .impact-invitation { background: #FDF3E0 !important; }
+
+    /* Perception gap table */
+    .perception-table th { background: #1B3A5C !important; color: white !important; }
+    .perception-table tr:nth-child(odd) td { background: #FAFAFA !important; }
+
+    /* Practice cards */
+    .practice-card {
+      border-left: 4px solid #C8962E !important;
+      box-shadow: none !important;
+      page-break-inside: avoid;
+      margin-bottom: 12px !important;
+    }
+    .practice-signal { background: #E8F5F0 !important; }
+
+    /* For Those Who Know You */
+    .ftyky-card {
+      background: #1B3A5C !important;
+      border-radius: 4px !important;
+      break-before: page;
+      page-break-before: always;
+    }
+    .ftyky-title { color: white !important; }
+    .ftyky-opening { color: rgba(255,255,255,0.8) !important; }
+    .ftyky-body { color: rgba(255,255,255,0.75) !important; }
+    .ftyky-section-title { color: #C8962E !important; }
+    .ftyky-never { background: rgba(200,150,46,0.15) !important; }
+    .ftyky-never-text { color: rgba(255,255,255,0.8) !important; }
+    .ftyky-closing { color: rgba(255,255,255,0.65) !important; }
+    .ftyky-list-item { color: rgba(255,255,255,0.75) !important; }
+
+    /* Paid section dividers */
+    .paid-section-divider { page-break-before: always; }
+
+    /* Values chips */
+    .value-chip {
+      border: 1px solid #C8962E !important;
+      color: #1B3A5C !important;
+      background: white !important;
+    }
+
+    /* Reach items */
+    .reach-icon { color: #C8962E !important; }
+
+    /* Drift cards */
+    .drift-card { background: #FAFAFA !important; border: 1px solid #E8EDF2 !important; }
+
+    /* Trigger items */
+    .trigger-icon { color: #C8962E !important; }
+
+    /* Free summary card in paid report */
+    .free-summary-card { background: #F5F7FA !important; border: 1px solid #E8EDF2 !important; }
+
+    /* Disclaimer */
+    .disclaimer { font-size: 8pt !important; color: #aaa !important; }
+
+    /* Growth guide section bg */
+    .growth-guide-header { background: #1B3A5C !important; }
+
+    /* Hide upgrade prompts */
+    .upgrade-card, .drift-tease-card { display: none !important; }
   }
 
   /* ── Responsive ── */
@@ -939,19 +1051,21 @@ function Assessment({ user, onComplete }) {
 
 // ─── Free Report ──────────────────────────────────────────────
 function PrintSaveButtons({ isPaid = false }) {
+  function handlePrint() {
+    // Brief delay ensures all content is fully rendered before printing
+    setTimeout(() => window.print(), 300);
+  }
   return (
     <div className="report-actions">
-      <button className="btn-print" onClick={() => window.print()}>
-        🖨 Print Report
-      </button>
-      <button className="btn-print" onClick={() => window.print()}>
+      <button className="btn-print-gold" onClick={handlePrint}>
         💾 Save as PDF
       </button>
-      {!isPaid && (
-        <span style={{ fontSize: 12, color: "#aaa", alignSelf: "center", marginLeft: 4 }}>
-          Tip: In print dialog, choose "Save as PDF" to download
-        </span>
-      )}
+      <button className="btn-print" onClick={handlePrint}>
+        🖨 Print Report
+      </button>
+      <span style={{ fontSize: 11, color: "#aaa", alignSelf: "center", marginLeft: 4 }}>
+        In the print dialog — select <strong>Save as PDF</strong> and set margins to <strong>None</strong> for best results
+      </span>
     </div>
   );
 }
