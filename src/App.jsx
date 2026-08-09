@@ -323,13 +323,13 @@ function Topbar({ solid = false }) {
 
   return (
     <header className={`topbar ${solid ? "solid" : scrolled ? "scrolled" : ""}`}>
-      <Link to="/" className="topbar-logo">
+      <a href="#" className="topbar-logo" onClick={e=>{e.preventDefault();window.scrollTo({top:0,behavior:"smooth"})}}>
         <Shield size={36} primary={WHITE} accent={GOLD}/>
         <div className="topbar-wordmark">
           <span className="topbar-brand">Est. 2024</span>
           <span className="topbar-name">LADD Academy</span>
         </div>
-      </Link>
+      </a>
       {solid ? (
         <Link to="/" className="topbar-back">← Back to Home</Link>
       ) : (
