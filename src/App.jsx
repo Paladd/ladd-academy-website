@@ -357,14 +357,14 @@ function Footer() {
             <div className="footer-brand-name">LADD Academy</div>
             <div className="footer-brand-tag">Building Leaders from the Inside Out</div>
             <p className="footer-brand-desc">
-              A values-and-behaviors-based human development company serving individuals, coaches, and organizations through the CORE Blueprint™ framework and beyond. Veteran-owned.
+              A values-and-behaviors-based human development company serving individuals, facilitators, and organizations through the CORE Blueprint™ framework and beyond. Veteran-owned.
             </p>
           </div>
           <div>
             <div className="footer-col-title">Assessment</div>
             <div className="footer-links">
               <a href="https://core-blueprint.laddacademy.com" className="footer-link">Take Free Assessment</a>
-              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint</a>
+              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint — $24</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">CORE Blueprint™ 360</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Team Assessment</a>
             </div>
@@ -464,14 +464,14 @@ function HomePage() {
             <span className="section-eyebrow">What We Do</span>
             <h2 className="section-title">Human development<br/>for the <em>whole</em> life.</h2>
             <p className="section-body">
-              LADD Academy serves individuals, leaders, coaches, and organizations through a values-and-behaviors framework that addresses the most important questions a person can ask — and gives them the tools to answer them.
+              LADD Academy serves individuals, leaders, facilitators, and organizations through a values-and-behaviors framework that addresses the most important questions a person can ask — and gives them the tools to answer them.
             </p>
           </Reveal>
           <div className="what-grid">
             {[
               { icon:"🏛", title:"Individual Development", text:"The CORE Blueprint™ assessment reveals who you are at your best, what you most deeply need, and who you become under pressure — across every arena of your life.", link:"Take the Assessment →", href:"https://core-blueprint.laddacademy.com", external:true },
               { icon:"🧭", title:"Executive Coaching", text:"One-on-one coaching for leaders who want to close the gap between who they are and how they show up — in the boardroom, at home, and everywhere in between.", link:"Learn More →", href:"#contact", external:false },
-              { icon:"📋", title:"Coach Training & Certification", text:"The CORE Blueprint™ Certified Facilitator program equips coaches, HR professionals, and L&D leaders with a behaviorally grounded tool and the training to use it.", link:"Join the Waitlist →", href:"#contact", external:false },
+              { icon:"📋", title:"Facilitator Training & Certification", text:"The CORE Blueprint™ Certified Facilitator program equips coaches, HR professionals, and L&D leaders with a behaviorally grounded tool and the training to use it.", link:"Join the Waitlist →", href:"#contact", external:false },
               { icon:"🏢", title:"Organizational Transformation", text:"Team assessments, leadership development programs, and organizational culture work grounded in the CORE Blueprint™ framework — for teams that want to perform and thrive.", link:"Explore →", href:"#contact", external:false },
               { icon:"📚", title:"Books & Resources", text:"Leadership fables, children's values books, and practitioner guides built on the same values-and-behaviors foundation. Tools for every stage of the development journey.", link:"Coming Soon →", href:"#products", external:false },
               { icon:"⚡", title:"Crucible", text:"AI-powered coaching development — where coaches are forged. Transcript evaluation, AI client practice, MCC demonstration coaching, and credential-level calibration.", link:"Enter Crucible →", href:"https://crucible-laddacademy.lovable.app", external:true },
@@ -545,7 +545,7 @@ function HomePage() {
                   ))}
                 </ul>
                 <div className="featured-price">
-                  <span className="featured-price-paid">$39</span>
+                  <span className="featured-price-paid">$24</span>
                   <span className="featured-price-note">— one time</span>
                 </div>
               </div>
@@ -846,7 +846,7 @@ function TermsOfService() {
         <div className="legal-toc">
           <div className="legal-toc-title">Contents</div>
           <div className="legal-toc-list">
-            {["Acceptance of Terms","Who May Use Our Services","The CORE Blueprint™ Assessment","Permitted and Prohibited Uses","Purchases and Payments","Intellectual Property","Facilitator and Coach Licenses","Disclaimer of Warranties","Limitation of Liability","Indemnification","Termination","Governing Law and Disputes","Changes to These Terms","Contact"].map((item, i) => (
+            {["Acceptance of Terms","Who May Use Our Services","The CORE Blueprint™ Assessment","Permitted and Prohibited Uses","Purchases and Payments","Intellectual Property","Facilitator Licenses","Disclaimer of Warranties","Limitation of Liability","Indemnification","Termination","Governing Law and Disputes","Changes to These Terms","Contact"].map((item, i) => (
               <a key={i} href={`#tos-${i+1}`} className="legal-toc-link">{item}</a>
             ))}
           </div>
@@ -868,7 +868,7 @@ function TermsOfService() {
             <p className="legal-p">All content — including the CORE Blueprint™ framework, C·O·R·E dimensions, Roots & Reach framework, the 12 CORE Type profiles, CORE Growth Index™, all report language, assessment questions, scoring methodology, the Coaching Guide, the Debrief Guide, and all visual design elements — is the exclusive intellectual property of LADD Academy LLC and is protected by United States copyright law.</p>
             <p className="legal-p"><strong>CORE Blueprint™</strong>, <strong>LADD Academy™</strong>, and <strong>Crucible™</strong> are trademarks of LADD Academy LLC. Your personal assessment results belong to you for personal use.</p>
           </>},
-          { id:"tos-7", num:"7", title:"Facilitator and Coach Licenses", body:"Coaches, facilitators, and organizations that purchase seat packs, the Coaching Guide, the Debrief Guide, or a Facilitator Certification receive a limited, non-exclusive, non-transferable license to use CORE Blueprint™ materials with their clients. Facilitators may not reproduce, resell, or create derivative works. Licensed materials may not be used for employment decisions." },
+          { id:"tos-7", num:"7", title:"Facilitator Licenses", body:"Coaches, facilitators, and organizations that purchase seat packs, the Coaching Guide, the Debrief Guide, or a Facilitator Certification receive a limited, non-exclusive, non-transferable license to use CORE Blueprint™ materials with their clients. Facilitators may not reproduce, resell, or create derivative works. Licensed materials may not be used for employment decisions." },
           { id:"tos-8", num:"8", title:"Disclaimer of Warranties", body:"THE CORE BLUEPRINT™ PLATFORM AND ALL ASSOCIATED PRODUCTS ARE PROVIDED 'AS IS' AND 'AS AVAILABLE' WITHOUT WARRANTY OF ANY KIND. The CORE Blueprint™ is a self-development tool, not a clinical or psychological service." },
           { id:"tos-9", num:"9", title:"Limitation of Liability", body:"TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LADD ACADEMY LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES. LADD Academy LLC's total liability for any claim shall not exceed the amount you paid in the twelve months preceding the claim, or $50, whichever is greater." },
           { id:"tos-10", num:"10", title:"Indemnification", body:"You agree to defend, indemnify, and hold harmless LADD Academy LLC from any claims arising from your violation of these Terms, including any use of assessment results for employment decisions." },
