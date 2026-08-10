@@ -364,7 +364,7 @@ function Footer() {
             <div className="footer-col-title">Assessment</div>
             <div className="footer-links">
               <a href="https://core-blueprint.laddacademy.com" className="footer-link">Take Free Assessment</a>
-              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint</a>
+              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint — $24</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">CORE Blueprint™ 360</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Team Assessment</a>
             </div>
@@ -545,7 +545,7 @@ function HomePage() {
                   ))}
                 </ul>
                 <div className="featured-price">
-                  <span className="featured-price-paid">$39</span>
+                  <span className="featured-price-paid">$24</span>
                   <span className="featured-price-note">— one time</span>
                 </div>
               </div>
@@ -752,7 +752,7 @@ function PrivacyPolicy() {
             <p className="legal-p"><strong>Information you provide directly:</strong></p>
             <ul className="legal-list">
               <li><strong>Name and email address</strong> — collected when you begin the CORE Blueprint™ assessment or sign up to receive communications from LADD Academy LLC.</li>
-              <li><strong>Assessment responses</strong> — your answers to the 72 assessment questions. These are used solely to generate your behavioral profile and report.</li>
+              <li><strong>Assessment responses</strong> — your answers to the assessment questions. These are used solely to generate your behavioral profile and report.</li>
               <li><strong>Payment information</strong> — processed by Stripe. LADD Academy LLC never sees or stores your card number or banking information.</li>
               <li><strong>Communications</strong> — if you contact us, we retain that correspondence to respond and improve our services.</li>
             </ul>
