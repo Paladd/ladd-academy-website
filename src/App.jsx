@@ -559,30 +559,24 @@ function HomePage() {
         </div>
       </section>
 
-      {/* About */}
+      {/* About the Founder — trimmed */}
       <section className="section" id="about" style={{ background: WHITE }}>
         <div className="about-inner">
-          {/* LEFT — all text content */}
+          {/* LEFT — tightened text content */}
           <Reveal>
             <div>
               <span className="section-eyebrow">About the Founder</span>
               <h2 className="section-title">Paul Ladd</h2>
               <p className="section-body" style={{ marginBottom: 24 }}>
-                Over thirty years of working with people, I've seen what happens when the human side of leadership gets lost. I've watched the pain in someone's eyes when they stop believing their work matters. I've watched good people become smaller versions of themselves under leaders who never understood how their own needs, values, and behaviors affected the people around them.
+                Over thirty years of working with people, I've watched what happens when the human side of leadership gets lost — good people becoming smaller versions of themselves under leaders who never understood how their own needs and behaviors affected everyone around them.
               </p>
               <p className="about-quote">
-                "I've also seen something else. I've seen what happens when people understand themselves, find their voice, reconnect with what matters to them, and begin leading from a place of authenticity. The difference can be extraordinary."
+                "I've also seen what happens when people understand themselves, find their voice, and begin leading from a place of authenticity. The difference can be extraordinary."
               </p>
               <p className="section-body" style={{ marginTop: 20, marginBottom: 24 }}>
-                That is where LADD Academy began. The belief that people are capable of more. That leadership is deeply human. That lasting change begins with understanding the person looking back at you in the mirror.
+                That is where LADD Academy began — the belief that leadership is deeply human, and lasting change starts with understanding the person looking back at you in the mirror.
               </p>
               <span className="about-quote-attr">Paul Ladd · Founder</span>
-              <div style={{ marginTop:36, padding:"24px 28px", background:"#0F2035", borderRadius:14, borderLeft:"4px solid #C8962E" }}>
-                <div style={{ fontSize:11, fontWeight:700, letterSpacing:"2px", textTransform:"uppercase", color:"#C8962E", marginBottom:12 }}>About the Framework</div>
-                <p style={{ fontSize:14, color:"rgba(255,255,255,0.75)", lineHeight:1.8, margin:0 }}>
-                  The CORE Blueprint™ was built from the inside out — the same way it asks you to grow. It began with three decades of direct observation: watching leaders succeed and fail, watching people find their voice and lose it, watching the cost of self-ignorance and the transformation that follows self-knowledge. It was developed by a practitioner, grounded in behavioral science, and positioned honestly within its scope. It is a development tool. It makes no clinical claims. It does exactly what it says — it shows you who you are, what you need, who you become under pressure, and what growth looks like from there.
-                </p>
-              </div>
             </div>
           </Reveal>
           {/* RIGHT — credential cards + LADD Academy Serves */}
@@ -613,6 +607,21 @@ function HomePage() {
                 </div>
               </div>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* About the Framework — standalone credibility section */}
+      <section className="section" id="framework" style={{ background: DKNAVY }}>
+        <div className="section-inner" style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
+          <Reveal>
+            <span className="section-eyebrow" style={{ color: GOLD }}>About the Framework</span>
+            <h2 className="section-title" style={{ color: WHITE }}>
+              Built from the <em>inside out</em> — the same way it asks you to grow.
+            </h2>
+            <p className="section-body" style={{ color: "rgba(255,255,255,0.75)", margin: "0 auto" }}>
+              The CORE Blueprint™ began with three decades of direct observation — watching leaders succeed and fail, watching people find their voice and lose it, watching the cost of self-ignorance and the transformation that follows self-knowledge. It was developed by a practitioner, grounded in behavioral science, and positioned honestly within its scope. It is a development tool. It makes no clinical claims. It does exactly what it says — it shows you who you are, what you need, who you become under pressure, and what growth looks like from there.
+            </p>
           </Reveal>
         </div>
       </section>
