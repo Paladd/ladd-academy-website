@@ -364,7 +364,7 @@ function Footer() {
             <div className="footer-col-title">Assessment</div>
             <div className="footer-links">
               <a href="https://core-blueprint.laddacademy.com" className="footer-link">Take Free Assessment</a>
-              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Blueprint — $24</a>
+              <a href="https://core-blueprint.laddacademy.com" className="footer-link">Full Report</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">CORE Blueprint™ 360</a>
               <a href="#contact" onClick={(e)=>{e.preventDefault();document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}} className="footer-link">Team Assessment</a>
             </div>
@@ -545,7 +545,7 @@ function HomePage() {
                   ))}
                 </ul>
                 <div className="featured-price">
-                  <span className="featured-price-paid">$24</span>
+                  <span className="featured-price-paid">$39</span>
                   <span className="featured-price-note">— one time</span>
                 </div>
               </div>
@@ -639,7 +639,7 @@ function HomePage() {
           <div className="products-grid">
             {[
               { status:"live",  label:"Live Now",    icon:"🏛", title:"CORE Blueprint™ Assessment", text:"The free behavioral assessment. Discover your type, your needs, and your Edge in 12–15 minutes.", action:"Take It Free →", href:"https://core-blueprint.laddacademy.com", external:true },
-              { status:"live",  label:"Available",   icon:"🧭", title:"The Coaching Guide", text:"A practitioner's guide to working with CORE Blueprint™ results in one-on-one coaching engagements. Six parts, all 12 types.", action:"Purchase →", href:"#contact", external:false },
+              { status:"live",  label:"Available",   icon:"🧭", title:"The Coaching Guide", text:"A coach's guide to working with CORE Blueprint™ results in one-on-one coaching engagements. Six parts, all 12 types.", action:"Purchase →", href:"#contact", external:false },
               { status:"soon",  label:"Coming Soon", icon:"📋", title:"Facilitator Certification", text:"Train to deploy the CORE Blueprint™ with individuals, teams, and organizations. Certified Facilitator program.", action:"Join Waitlist →", href:"#contact", external:false },
               { status:"soon",  label:"Coming Soon", icon:"🔄", title:"CORE Blueprint™ 360", text:"Multi-rater behavioral assessment across Inner Circle, Peer, Lead, and Authority circles. The only 360 that asks how you show up at home.", action:"Join Waitlist →", href:"#contact", external:false },
               { status:"dev",   label:"In Beta",     icon:"⚡", title:"Crucible", text:"Where coaches are forged. AI client practice, transcript evaluation, MCC demonstration coaching, and credential-level calibration.", action:"Enter Crucible →", href:"https://crucible-laddacademy.lovable.app", external:true },
